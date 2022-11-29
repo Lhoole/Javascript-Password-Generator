@@ -71,6 +71,9 @@ header {
   display: block;
   clear: both;
 }
+.options p{
+  display: inline;
+}
 
 .btn {
   border: none;
