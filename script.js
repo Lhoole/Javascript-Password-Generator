@@ -29,7 +29,7 @@ function writePassword() {
 
 
 function generatePassword(){
-  pass--;
+  pass = "";
   console.log("generating password")
   criteria = []
   do {passwordLength = window.prompt("Length of password: A number between 8 and 128")
