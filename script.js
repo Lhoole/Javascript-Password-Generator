@@ -3,6 +3,8 @@ var generateBtn = document.querySelector("#generate");
 var passwordLength = null
 var isLower = false
 var isUpper = false
+var isNum = false
+var isSpesh = false
 var lowerletters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 
 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r',
  's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
@@ -14,7 +16,9 @@ var lowerletters = ['a', 'b', 'c', 'd', 'e', 'f', 'g',
  "%", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<",
   "=", ">", "?", "@", "^", "_", "`", "{", "|", "}", "~", "\[", "\]"];
  
- var criteria = []
+ var criteria = [];
+ var pass = "";
+ var passwordText = document.querySelector("#password");
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
@@ -29,6 +33,8 @@ function generatePassword(){
   criteria = []
   do {passwordLength = window.prompt("Length of password: A number between 8 and 128")
 } while (passwordLength<8 || passwordLength>128 || isNaN(passwordLength));
+  
+do {
   isLower = confirm("Would you like lowercase in your password")
   
   isUpper = confirm("Would you like uppercase in your password")
@@ -36,7 +42,7 @@ function generatePassword(){
   isNum = confirm("Would you like numbers in your password")
   
   isSpesh = confirm("Would you like special characters in your password")
-
+} while (isLower == false && isUpper == false && isNum == false && isSpesh == false)
 
   if (isLower) {
     criteria.push(...lowerletters)
@@ -50,9 +56,13 @@ function generatePassword(){
   if (isSpesh) {
     criteria.push(...specialCharacters)
   }
-
-  console.log(criteria)
+  for (var i = 0; i < passwordLength; i++) { 
+    var randomcriteria = Math.floor(Math.random() * criteria.length);
+    pass = pass + (criteria[randomcriteria])
+  }  
+ return pass
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", writePassword); {
+};
