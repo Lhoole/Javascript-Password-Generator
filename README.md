@@ -1,4 +1,4 @@
-# <Luke Hoole, Work portfolio>
+# <Luke Hoole, Password Generator>
 
 ## Description
 
@@ -11,7 +11,7 @@ Not Required.
 
 ## Usage
 
-To see and overview of who I am, what work I have done and provide links to said work.
+To generate a password based on your chosen criteria click "Generate Password".
 Access via: https://lhoole.github.io/Javascript-Password-Generator/
 
 ![Screenshot](assets/images/Screenshot.png)
