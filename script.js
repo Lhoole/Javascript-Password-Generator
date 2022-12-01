@@ -18,7 +18,6 @@ var lowerletters = ['a', 'b', 'c', 'd', 'e', 'f', 'g',
  
  var criteria = [];
  var pass = "";
- var passwordText = document.querySelector("#password");
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
@@ -28,7 +27,9 @@ function writePassword() {
 
 }
 
+
 function generatePassword(){
+  pass--;
   console.log("generating password")
   criteria = []
   do {passwordLength = window.prompt("Length of password: A number between 8 and 128")
